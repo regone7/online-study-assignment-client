@@ -1,12 +1,54 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaRegEyeSlash } from "react-icons/fa6";
 import { IoMdEye } from "react-icons/io";
+import { AuthContext } from "../provider/AuthProvider";
 
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false)
     const [error, setError] = useState("");
+    const { creatUser,updateUserProfile,setLoading } = useContext(AuthContext)
+    const handelRegisterPg=(e)=>{
+        e.preventDefault();
+        const name = e.target.name.value;
+        const email = e.target.email.value;
+        const photoURL = e.target.photoURL.value;
+        const password = e.target.password.value;
+        console.log(name, email, password)
+
+        if (password.length < 6) {
+            setError("Password must be at least 6 character")
+            return;
+        }
+        if (!/(?=.*[A-Z])/.test(password)) {
+            setError("Password Must have One Uppercase letter in the password")
+            return;
+        }
+        if (!/(?=.*[a-z])/.test(password)) {
+            setError("Password Must have One Lowercase letter in the password")
+            return;
+        }
+        setError('')
+
+        creatUser(email, password)
+            .then(() => {
+                updateUserProfile(name, photoURL)
+                    .then(() => {
+                     console.log("success update") 
+                     
+                        setLoading(false)  
+                        
+                    })
+
+            })
+            .catch((error) => {
+                console.error(error)
+               
+            })
+
+    }
+
     return (
         <div>
             <div className="hero min-h-screen bg-base-100">
@@ -17,7 +59,7 @@ const Register = () => {
                     <div className="card shrink-0 lg:w-[450px]  md:w-[350px] shadow-2xl rounded-none ">
                         <h1 className="text-3xl text-center pt-5 font-bold text-green-500">Register Now!</h1>
                         <div className="card-body">
-                            <form >
+                            <form onSubmit={handelRegisterPg} >
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Name</span>

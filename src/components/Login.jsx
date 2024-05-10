@@ -1,12 +1,50 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaRegEyeSlash } from "react-icons/fa6";
 import { IoMdEye } from "react-icons/io";
 import { FcGoogle } from "react-icons/fc";
+import { AuthContext } from "../provider/AuthProvider";
 
 
 const Login = () => {
     const [showPasswords, setShowPasswords] = useState(false)
+    const {signInUsers,googleLogin,setLoading}= useContext(AuthContext)
+   
+
+    const handelLoginPg=(e)=>{
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        console.log(email,password)
+
+        signInUsers(email, password)
+            .then(result => {
+                console.log(result.user)
+                console.log('success')
+               
+                setLoading(false)
+               
+            })
+            .catch(error => {
+                console.error(error)
+               
+                
+            })
+    }
+    const handelgoogleLogin = () => {
+        googleLogin()
+            .then((result) => {
+                console.log(result.user)
+                console.log("google success")
+                
+                
+            })
+            .catch(error => {
+                console.error(error)
+
+            })
+    }
+    
     return (
         <div>
 
@@ -18,7 +56,7 @@ const Login = () => {
                     <div className="card shrink-0 lg:w-[450px]  md:w-[350px] shadow-2xl rounded-none ">
                         <h1 className="text-3xl text-center pt-5 font-bold text-green-500">Log In Now!</h1>
                         <div className="card-body">
-                            <form >
+                            <form onSubmit={handelLoginPg} >
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Email</span>
@@ -52,7 +90,7 @@ const Login = () => {
 
                         <div className="divider divider-gray-100 px-9">OR Login With </div>
                         <div className="px-9 flex flex-col w-full gap-3 mb-12">
-                            <button className="btn btn-outline btn-info "><FcGoogle className="text-3xl" /> Google</button>
+                            <button onClick={handelgoogleLogin} className="btn btn-outline btn-info "><FcGoogle className="text-3xl" /> Google</button>
                         </div>
 
                     </div>
