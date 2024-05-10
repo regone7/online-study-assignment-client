@@ -16,7 +16,7 @@ const Navber = () => {
                         </ul>
                     </div>
                     <Link to='/' className='flex gap-2 justify-center items-center'>
-                        <FcCollaboration className="md:text-3xl" />
+                        <FcCollaboration className=" text-2xl md:text-3xl " />
                         <span className='font-bold text-rose-500 md:text-xl'>E-Assignment Collaborative</span>
                     </Link>
                     
