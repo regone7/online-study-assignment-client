@@ -9,10 +9,14 @@ const Login = () => {
     const [showPasswords, setShowPasswords] = useState(false)
     return (
         <div>
+
             <div className="hero min-h-screen bg-gray-100">
-                <div className="hero-content ">
-                    <div className="card shrink-0 lg:w-[450px]  md:w-[350px] shadow-2xl ">
-                        <h1 className="text-3xl text-center pt-5 font-bold">Log In Now!</h1>
+                <div className="hero-content flex-col md:flex-row ">
+                    <div>
+                        <img className="md:h-[400px] w-full rounded-md" src="https://i.ibb.co/fGK37zG/pexels-heyho-7394015.jpg" alt="" />
+                    </div>
+                    <div className="card shrink-0 lg:w-[450px]  md:w-[350px] shadow-2xl rounded-none ">
+                        <h1 className="text-3xl text-center pt-5 font-bold text-green-500">Log In Now!</h1>
                         <div className="card-body">
                             <form >
                                 <div className="form-control">
@@ -48,12 +52,12 @@ const Login = () => {
 
                         <div className="divider divider-gray-100 px-9">OR Login With </div>
                         <div className="px-9 flex flex-col w-full gap-3 mb-12">
-                            <button   className="btn btn-outline btn-info "><FcGoogle className="text-3xl" /> Google</button>
+                            <button className="btn btn-outline btn-info "><FcGoogle className="text-3xl" /> Google</button>
                         </div>
 
                     </div>
                 </div>
-               
+
             </div>
         </div>
     );

@@ -10,9 +10,12 @@ const Register = () => {
     return (
         <div>
             <div className="hero min-h-screen bg-base-100">
-                <div className="hero-content ">
-                    <div className="card shrink-0 lg:w-[450px]  md:w-[350px] shadow-2xl ">
-                        <h1 className="text-3xl text-center pt-5 font-bold text-orange-500">Register Now!</h1>
+                <div className="hero-content flex-col md:flex-row-reverse ">
+                    <div>
+                        <img className="md:h-[400px] w-full rounded-md" src="https://i.ibb.co/fGK37zG/pexels-heyho-7394015.jpg" alt="" />
+                    </div>
+                    <div className="card shrink-0 lg:w-[450px]  md:w-[350px] shadow-2xl rounded-none ">
+                        <h1 className="text-3xl text-center pt-5 font-bold text-green-500">Register Now!</h1>
                         <div className="card-body">
                             <form >
                                 <div className="form-control">
@@ -54,7 +57,7 @@ const Register = () => {
                                     }
                                 </div>
                                 <div className="form-control ">
-                                    <input type="submit" value="Register" className="btn  bg-orange-300 mt-5 hover:bg-orange-400" />
+                                    <input type="submit" value="Register" className="btn  bg-green-300 mt-5 hover:bg-green-400" />
                                 </div>
                             </form>
 
@@ -62,12 +65,12 @@ const Register = () => {
                         <div className="flex items-center justify-between px-9 mb-7">
 
                             <h2>Alraedy have an account!</h2>
-                            <Link to='/login'><h2 className=" border-b-2 border-green-300 hover:bg-cyan-300 text-green-400">Log In</h2></Link>
+                            <Link to='/login'><h2 className=" border-b-2 border-green-300 hover:text-cyan-300 text-green-400">Log In</h2></Link>
                         </div>
 
                     </div>
                 </div>
-                
+
             </div>
         </div>
     );
