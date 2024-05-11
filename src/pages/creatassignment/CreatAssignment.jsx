@@ -1,9 +1,41 @@
-import { useState } from "react";
+import axios from "axios";
+import { useContext, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import toast, { Toaster } from 'react-hot-toast';
+import { AuthContext } from "../../provider/AuthProvider";
 
 const CreatAssignment = () => {
+    const { user } = useContext(AuthContext)
     const [startDate, setStartDate] = useState(new Date());
+    const handelCreateAssignment = async(e)=>{
+        e.preventDefault();
+
+        const title= e.target.title.value;
+        const description= e.target.description.value;
+        const marks= e.target.marks.value;
+        const photoURL= e.target.photoURL.value;
+        const category= e.target.category.value;
+        const date= startDate;
+        const email= user?.email;
+
+        const createassignments={title,description,marks,photoURL,category,date,email}
+        console.log(createassignments)
+
+        try {
+            const { data } = await axios.post(
+              'http://localhost:9000/assignment',
+              createassignments
+            )
+            console.log(data)
+            console.log('success')
+            toast.success('Assignment will be created Successfuly ')
+          } catch (err) {
+            console.log(err)
+          }
+
+
+    }
     return (
         <div>
             <div className="hero min-h-screen  text-gray-700">
@@ -12,7 +44,7 @@ const CreatAssignment = () => {
                     <div className="card shrink-0 lg:w-[450px]  md:w-[350px] shadow-2xl rounded-none bg-green-50">
                         <h1 className="text-2xl text-center pt-5  font-bold md:text-3xl ">Create Assignment</h1>
                         <div className="card-body -mt-5">
-                            <form >
+                            <form onSubmit={handelCreateAssignment}>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Title</span>
@@ -35,7 +67,7 @@ const CreatAssignment = () => {
                                     <label className="label">
                                         <span className="label-text">Image URL</span>
                                     </label>
-                                    <input type="text" name="image " placeholder="Image URL" className="h-12 p-3 input-bordered" required />
+                                    <input type="text" name="photoURL" placeholder="photoURL" className="h-12 p-3 input-bordered" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
@@ -51,7 +83,7 @@ const CreatAssignment = () => {
                                     <label className="label">
                                         <span className="label-text">Due Date</span>
                                     </label>
-                                    <DatePicker className="h-12 p-3 input-bordered " selected={startDate} onChange={(date) => setStartDate(date)} required />
+                                    <DatePicker  className="h-12 p-3 input-bordered " selected={startDate} onChange={(date) => setStartDate(date)} required />
                                 </div>
 
                                 <div className="form-control mt-6">
@@ -65,6 +97,7 @@ const CreatAssignment = () => {
 
                     </div>
                 </div>
+                <Toaster position="top-center" />
 
             </div>
         </div>

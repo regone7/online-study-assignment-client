@@ -11,6 +11,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import AuthProvider from './provider/AuthProvider';
 import CreatAssignment from './pages/creatassignment/CreatAssignment';
+import AllAssignments from './pages/allassignment/AllAssignments';
 
 
 const router = createBrowserRouter([
@@ -37,6 +38,12 @@ const router = createBrowserRouter([
       {
         path: "/createassignment",
         element: <CreatAssignment></CreatAssignment>,
+
+      },
+      {
+        path: "/allassignment",
+        element: <AllAssignments></AllAssignments>,
+        loader: () => fetch('http://localhost:9000/assignment')
 
       },
 

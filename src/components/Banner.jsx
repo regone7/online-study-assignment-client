@@ -3,9 +3,9 @@
 const Banner = () => {
     return (
         <div className="container mx-auto my-5">
-            <div className="my-1">
+            <div className="my-1 ">
                 <div className="container mx-auto absolute">
-                    <img className=" md:h-[350px] h-[180px] w-full" src="https://i.ibb.co/qBhL2hs/7409791-3653025.jpg" alt="" />
+                    <img className=" md:h-[350px] h-[180px] w-full " src="https://i.ibb.co/qBhL2hs/7409791-3653025.jpg" alt="" />
 
                 </div>
                 <div className="relative flex  justify-center items-center  w-full h-[180px] md:h-[350px]">
