@@ -51,7 +51,7 @@ const Navber = () => {
                         }
                     </ul>
                 </div>
-                <div className="navbar-end w-28">
+                <div className="navbar-end w-32">
                     <div className="dropdown dropdown-end">
                         {
                             user && <>
