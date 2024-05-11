@@ -12,6 +12,7 @@ import Register from './components/Register';
 import AuthProvider from './provider/AuthProvider';
 import CreatAssignment from './pages/creatassignment/CreatAssignment';
 import AllAssignments from './pages/allassignment/AllAssignments';
+import DitelsPage from './pages/ditels/DitelsPage';
 
 
 const router = createBrowserRouter([
@@ -44,6 +45,12 @@ const router = createBrowserRouter([
         path: "/allassignment",
         element: <AllAssignments></AllAssignments>,
         loader: () => fetch('http://localhost:9000/assignment')
+
+      },
+      {
+        path: "/ditelspg/:id",
+        element: <DitelsPage></DitelsPage>,
+        loader: ({params}) => fetch(`http://localhost:9000/assignment/${params.id}`)
 
       },
 
