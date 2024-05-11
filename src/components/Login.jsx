@@ -48,12 +48,12 @@ const Login = () => {
     return (
         <div>
 
-            <div className="hero min-h-screen bg-gray-100">
+            <div className="hero min-h-screen ">
                 <div className="hero-content flex-col md:flex-row ">
                     <div>
                         <img className="md:h-[400px] w-full rounded-md" src="https://i.ibb.co/fGK37zG/pexels-heyho-7394015.jpg" alt="" />
                     </div>
-                    <div className="card shrink-0 lg:w-[450px]  md:w-[350px] shadow-2xl rounded-none ">
+                    <div className="card shrink-0 lg:w-[450px]  md:w-[350px] shadow-2xl rounded-none bg-gray-100">
                         <h1 className="text-3xl text-center pt-5 font-bold text-green-500">Log In Now!</h1>
                         <div className="card-body">
                             <form onSubmit={handelLoginPg} >
@@ -61,14 +61,14 @@ const Login = () => {
                                     <label className="label">
                                         <span className="label-text">Email</span>
                                     </label>
-                                    <input type="email" placeholder="email" name="email" className="input input-bordered" required />
+                                    <input type="email" placeholder="email" name="email" className=" h-12 p-3 input-bordered" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Password</span>
                                     </label>
                                     <div>
-                                        <input type={showPasswords ? "text" : "password"} name="password" placeholder="password" className="input input-bordered relative w-full" required />
+                                        <input type={showPasswords ? "text" : "password"} name="password" placeholder="password" className=" h-12 p-3 input-bordered relative w-full " required />
                                         <span className="absolute -ml-9 mt-4" onClick={() => { setShowPasswords(!showPasswords) }}>
                                             {
                                                 showPasswords ? <IoMdEye /> : <FaRegEyeSlash />

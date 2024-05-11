@@ -43,6 +43,7 @@ const Navber = () => {
                 <div className="navbar-end  hidden lg:flex ">
                     <ul className="menu menu-horizontal px-1 space-x-1">
                         <NavLink to='/' className={({ isActive }) => isActive ? 'text-orange-500 font-bold   w-12 h-7 flex justify-center items-center text-sm' : ' w-12 h-7 flex justify-center items-center text-sm'}>Home</NavLink>
+                        <NavLink to='/createassignment' className={({ isActive }) => isActive ? 'text-orange-500 font-bold  h-7 flex justify-center items-center text-sm' : 'h-7 flex justify-center items-center text-sm'}>Create Assignment</NavLink>
                         {
                             !user && <>
                                 <NavLink to='/login' className={({ isActive }) => isActive ? 'text-orange-500 font-bold   w-12 h-7 flex justify-center items-center text-sm' : ' w-12 h-7 flex justify-center items-center text-sm'}>Login</NavLink>

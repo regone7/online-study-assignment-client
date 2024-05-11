@@ -51,12 +51,12 @@ const Register = () => {
 
     return (
         <div>
-            <div className="hero min-h-screen bg-base-100">
+            <div className="hero min-h-screen ">
                 <div className="hero-content flex-col md:flex-row-reverse ">
                     <div>
                         <img className="md:h-[400px] w-full rounded-md" src="https://i.ibb.co/fGK37zG/pexels-heyho-7394015.jpg" alt="" />
                     </div>
-                    <div className="card shrink-0 lg:w-[450px]  md:w-[350px] shadow-2xl rounded-none ">
+                    <div className="card shrink-0 lg:w-[450px]  md:w-[350px] shadow-2xl rounded-none bg-gray-100">
                         <h1 className="text-3xl text-center pt-5 font-bold text-green-500">Register Now!</h1>
                         <div className="card-body">
                             <form onSubmit={handelRegisterPg} >
@@ -64,19 +64,19 @@ const Register = () => {
                                     <label className="label">
                                         <span className="label-text">Name</span>
                                     </label>
-                                    <input type="text" placeholder="name" name="name" className="input input-bordered" required />
+                                    <input type="text" placeholder="name" name="name" className="h-12 p-3 input-bordered" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Email</span>
                                     </label>
-                                    <input type="email" name="email" placeholder="email" className="input input-bordered" required />
+                                    <input type="email" name="email" placeholder="email" className="h-12 p-3 input-bordered" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">PhotoURL</span>
                                     </label>
-                                    <input type="text" placeholder="photoURL" name="photoURL" className="input input-bordered" required />
+                                    <input type="text" placeholder="photoURL" name="photoURL" className="h-12 p-3 input-bordered" required />
                                 </div>
                                 <div className="form-control">
 
@@ -84,7 +84,7 @@ const Register = () => {
                                         <span className="label-text">Password</span>
                                     </label>
                                     <div>
-                                        <input type={showPassword ? "text" : "password"} name="password" placeholder="password" className="input input-bordered relative w-full" required />
+                                        <input type={showPassword ? "text" : "password"} name="password" placeholder="password" className="h-12 p-3 input-bordered relative w-full" required />
                                         <span className="absolute -ml-9 mt-4" onClick={() => { setShowPassword(!showPassword) }}>
                                             {
                                                 showPassword ? <IoMdEye /> : <FaRegEyeSlash />
