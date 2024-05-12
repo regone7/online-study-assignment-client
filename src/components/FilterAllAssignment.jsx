@@ -7,6 +7,8 @@ import { AuthContext } from "../provider/AuthProvider";
 import axios from "axios";
 import "react-datepicker/dist/react-datepicker.css";
 import toast, { Toaster } from 'react-hot-toast';
+import Swal from "sweetalert2";
+
 
 const FilterAllAssignment = ({ fil }) => {
     const { user } = useContext(AuthContext)
@@ -17,16 +19,19 @@ const FilterAllAssignment = ({ fil }) => {
     
     
     const handleDelete = async id => {
-        if (user?.email !== fil.email) return toast.error('Error')
+        if (user?.email !== card?.email) return toast.error('Error')
         if(!user) return toast.error('Error')
         try {
             const { data } = await axios.delete(
                 `http://localhost:9000/delete/${id}`
             )
+            
             console.log(data)
             toast.success('Assignment Delete Successfuly ')
-            const remaining = card.filter((cards)=> cards._id !== id);
+
+            const remaining = card?.filter(i => i._id !==id)
             setCard(remaining)
+            
            
 
         } catch (err) {

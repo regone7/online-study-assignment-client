@@ -1,19 +1,24 @@
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import axios from "axios";
+import { useLoaderData } from "react-router-dom";
 
 
 const SubmitAssignment = () => {
     const { user } = useContext(AuthContext)
+    const sub = useLoaderData()
+    const {title,marks} = sub;
     const handelAssignmentSubmits = async (e) => {
         e.preventDefault();
         const link_submit = e.target.link_submit.value;
         const note_text = e.target.note_text.value;
         const status = 'pending';
         const email = user?.email;
-        const name =user?.displayName;
+        const examinee_name =user?.displayName;
+        const atitle = title;
+        const amarks= marks;
 
-        const submitData = { link_submit, note_text, status, email, name }
+        const submitData = { link_submit, note_text, status, email, examinee_name,atitle,amarks }
         console.log(submitData)
         try {
             const { data } = await axios.post(
