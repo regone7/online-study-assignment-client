@@ -6,8 +6,8 @@ import { useLoaderData } from "react-router-dom";
 
 const SubmitAssignment = () => {
     const { user } = useContext(AuthContext)
-    const sub = useLoaderData()
-    const {title,marks} = sub;
+    const subs = useLoaderData()
+    const {title,marks} = subs;
     const handelAssignmentSubmits = async (e) => {
         e.preventDefault();
         const link_submit = e.target.link_submit.value;

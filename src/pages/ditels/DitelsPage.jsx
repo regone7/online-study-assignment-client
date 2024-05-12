@@ -3,7 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const DitelsPage = () => {
     const ditel = useLoaderData()
-    const {title,description,marks,photoURL,category,date,email}=ditel
+    const {title,description,marks,photoURL,category,date,email,_id}=ditel
     return (
         <div className="container mx-auto my-3">
             <div className="hero min-h-screen ">
@@ -15,7 +15,7 @@ const DitelsPage = () => {
                         <p >Marks: {marks}</p>
                         <p >Category: {category}</p>
                         <p >Due Date: {date}</p>
-                        <Link to='/submitassignment'><button className="btn btn-sm text-white bg-rose-400 hover:bg-rose-600 my-3">Take assignment</button></Link>
+                        <Link to={`/submitassignment/${_id}`}><button className="btn btn-sm text-white bg-rose-400 hover:bg-rose-600 my-3">Take Assignment </button></Link>
                     </div>
                 </div>
             </div>

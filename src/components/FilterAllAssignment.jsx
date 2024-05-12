@@ -27,7 +27,7 @@ const FilterAllAssignment = ({ fil }) => {
             )
             
             console.log(data)
-            toast.success('Assignment Delete Successfuly ')
+            toast.success('Assignment Delete Successfuly Refresh page ')
 
             const remaining = card?.filter(i => i._id !==id)
             setCard(remaining)
