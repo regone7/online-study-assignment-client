@@ -9,9 +9,13 @@ const AllAssignments = () => {
     return (
         <div className="container mx-auto p-3">
             <div >
+                <h1 className="text-3xl text-center font-bold mt-5">All Assignment </h1>
+                <p className="text-center mb-3">Every User Create Assignment Here...</p>
+            </div>
+            <div >
                 <Tabs>
-                    <TabList>
-                        <Tab>Easy</Tab>
+                    <TabList >
+                        <Tab >Easy</Tab>
                         <Tab>Medium</Tab>
                         <Tab>Hard</Tab>
                     </TabList>
@@ -37,9 +41,7 @@ const AllAssignments = () => {
                             }
                         </div>
                     </TabPanel>
-                    <TabPanel>
-                        <h2>Any content 2</h2>
-                    </TabPanel>
+                    
                 </Tabs>
             </div>
         </div>

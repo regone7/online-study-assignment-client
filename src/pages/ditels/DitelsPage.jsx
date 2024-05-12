@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 
 const DitelsPage = () => {
@@ -6,7 +6,7 @@ const DitelsPage = () => {
     const {title,description,marks,photoURL,category,date,email}=ditel
     return (
         <div className="container mx-auto my-3">
-            <div className="hero min-h-screen bg-base-200">
+            <div className="hero min-h-screen ">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <img src={photoURL} className="md:max-w-sm rounded-lg shadow-2xl" />
                     <div className="p-3">
@@ -15,7 +15,7 @@ const DitelsPage = () => {
                         <p >Marks: {marks}</p>
                         <p >Category: {category}</p>
                         <p >Due Date: {date}</p>
-                        <button className="btn btn-sm text-white bg-rose-400 hover:bg-rose-600 my-3">Take assignment</button>
+                        <Link to='/submitassignment'><button className="btn btn-sm text-white bg-rose-400 hover:bg-rose-600 my-3">Take assignment</button></Link>
                     </div>
                 </div>
             </div>

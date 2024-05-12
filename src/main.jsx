@@ -13,6 +13,7 @@ import AuthProvider from './provider/AuthProvider';
 import CreatAssignment from './pages/creatassignment/CreatAssignment';
 import AllAssignments from './pages/allassignment/AllAssignments';
 import DitelsPage from './pages/ditels/DitelsPage';
+import SubmitAssignment from './pages/submitasssignment/SubmitAssignment';
 
 
 const router = createBrowserRouter([
@@ -51,6 +52,11 @@ const router = createBrowserRouter([
         path: "/ditelspg/:id",
         element: <DitelsPage></DitelsPage>,
         loader: ({params}) => fetch(`http://localhost:9000/assignment/${params.id}`)
+
+      },
+      {
+        path: "/submitassignment",
+        element: <SubmitAssignment></SubmitAssignment>,
 
       },
 
