@@ -11,8 +11,9 @@ const SubmitAssignment = () => {
         const note_text = e.target.note_text.value;
         const status = 'pending';
         const email = user?.email;
+        const name =user?.displayName;
 
-        const submitData = { link_submit, note_text, status, email }
+        const submitData = { link_submit, note_text, status, email, name }
         console.log(submitData)
         try {
             const { data } = await axios.post(

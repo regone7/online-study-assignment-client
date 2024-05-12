@@ -14,6 +14,7 @@ import CreatAssignment from './pages/creatassignment/CreatAssignment';
 import AllAssignments from './pages/allassignment/AllAssignments';
 import DitelsPage from './pages/ditels/DitelsPage';
 import SubmitAssignment from './pages/submitasssignment/SubmitAssignment';
+import UpdatePg from './pages/updatepg/UpdatePg';
 
 
 const router = createBrowserRouter([
@@ -57,6 +58,12 @@ const router = createBrowserRouter([
       {
         path: "/submitassignment",
         element: <SubmitAssignment></SubmitAssignment>,
+
+      },
+      {
+        path: "/updatepg/:id",
+        element: <UpdatePg></UpdatePg>,
+        loader: ({params}) => fetch(`http://localhost:9000/assignment/${params.id}`)
 
       },
 

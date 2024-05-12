@@ -12,9 +12,9 @@ const FilterAllAssignment = ({ fil }) => {
     const { user } = useContext(AuthContext)
 
     const [card, setCard] = useState(fil)
-    const { title, description, marks, photoURL, category, _id } = fil
+    const { title, description, marks, photoURL, category, _id } = card;
     
-
+    
     
     const handleDelete = async id => {
         if (user?.email !== fil.email) return toast.error('Error')
@@ -25,7 +25,7 @@ const FilterAllAssignment = ({ fil }) => {
             )
             console.log(data)
             toast.success('Assignment Delete Successfuly ')
-            const remaining = card.filter(users => users._id !== id)
+            const remaining = card.filter((cards)=> cards._id !== id);
             setCard(remaining)
            
 
@@ -33,6 +33,7 @@ const FilterAllAssignment = ({ fil }) => {
             console.log(err.message)
 
         }
+        
         
     }
     return (
@@ -56,7 +57,7 @@ const FilterAllAssignment = ({ fil }) => {
                     </div>
 
                     <div className="card-actions mt-3">
-                        <button className="btn btn-sm border-1 border-green-300">Update</button>
+                        <Link to={`/updatepg/${_id}`} ><button className="btn btn-sm border-1 border-green-300">Update</button></Link>
                         <button onClick={() => handleDelete(_id)} className="btn btn-sm border-1 border-red-300">Delete</button>
 
                     </div>
