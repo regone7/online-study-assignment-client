@@ -17,8 +17,10 @@ const SubmitAssignment = () => {
         const examinee_name =user?.displayName;
         const atitle = title;
         const amarks= marks;
+        const inspection_marks ='';
+        const feedback='';
 
-        const submitData = { link_submit, note_text, status, email, examinee_name,atitle,amarks }
+        const submitData = { link_submit, note_text, status, email, examinee_name,atitle,amarks,inspection_marks,feedback }
         console.log(submitData)
         try {
             const { data } = await axios.post(
