@@ -145,8 +145,8 @@ const FilterAllAssignment = ({ fil }) => {
 
                             </div>
                             <Link to={`/ditelspg/${_id}`}>
-                                <div className="flex justify-center items-center gap-2 ">
-                                    <span className="mb-1">View  </span>
+                                <div className="flex justify-center items-center gap-2 text-sky-500 ">
+                                    <span className="mb-1">View Details </span>
                                     <GrLinkNext />
                                 </div>
                             </Link>

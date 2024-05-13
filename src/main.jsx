@@ -17,6 +17,7 @@ import SubmitAssignment from './pages/submitasssignment/SubmitAssignment';
 import UpdatePg from './pages/updatepg/UpdatePg';
 import PendingAssignment from './pages/pending/PendingAssignment';
 import MarkPage from './pages/markpg/MarkPage';
+import MysubmitAsmnt from './pages/mysubmitted/MysubmitAsmnt';
 
 
 const router = createBrowserRouter([
@@ -79,6 +80,11 @@ const router = createBrowserRouter([
         path: "/markspg/:id",
         element: <MarkPage></MarkPage>,
         loader: ({params}) => fetch(`http://localhost:9000/assignsubmits/${params.id}`)
+
+      },
+      {
+        path: "/mysubmittedas",
+        element: <MysubmitAsmnt></MysubmitAsmnt>,
 
       },
 

@@ -1,13 +1,17 @@
 import axios from "axios";
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
-
+import { AuthContext } from "../../provider/AuthProvider";
+import toast, { Toaster } from 'react-hot-toast';
 
 const MarkPage = () => {
+    const { user } = useContext(AuthContext)
     const markes = useLoaderData()
     // console.log(markes)
     const { link_submit, note_text, status, email, examinee_name,atitle,amarks,_id,inspection_marks,feedback } =markes;
     const handelMarkgive = async(e)=>{
         e.preventDefault();
+        if(user?.email === email) return toast.error(' You are create this assignment so you can not submit.  ')
         const link_submit = e.target.link_submit.value;
         const note_text = e.target.note_text.value;
         const amarks = e.target.amarks.value;
@@ -90,7 +94,7 @@ const MarkPage = () => {
 
                     </div>
                 </div>
-
+                <Toaster position="top-center" />
 
             </div>
         </div>

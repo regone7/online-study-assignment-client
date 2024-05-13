@@ -62,14 +62,14 @@ const Navber = () => {
                                 <div >
                                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar ">
                                         <div className="w-10 rounded-full">
-                                            <img alt="Tailwind CSS Navbar component" src={user?.photoURL} />
+                                            <img alt="Tailwind CSS Navbar component" src={user?.photoURL || 'https://i.ibb.co/vwWq42z/pexels-pixabay-162137.jpg' } />
                                         </div>
                                     </div>
                                     <ul tabIndex={0} className="mt-3 z-[10] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
                                         <li className="text-sm font-sm">
                                             <a  >Profile Name:{user?.displayName} </a>
                                         </li>
-                                        <li><button></button></li>
+                                        <Link to='/mysubmittedas' ><li><button >My Submitted/Attempted Assignment</button></li></Link>
                                         <li><button onClick={handelLogout}>Logout</button></li>
                                     </ul>
                                 </div>
