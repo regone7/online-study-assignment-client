@@ -1,11 +1,15 @@
 import Banner from "../../components/Banner";
+import Features from "../../components/Features";
 
 
 const Home = () => {
     return (
-        <div>
+        <div className="container mx-auto">
             <div>
                 <Banner></Banner>
+            </div>
+            <div>
+                <Features></Features>
             </div>
         </div>
     );

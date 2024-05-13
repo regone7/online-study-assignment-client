@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import { FcCollaboration } from "react-icons/fc";
+import { SiGamemaker } from "react-icons/si";
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 
@@ -35,7 +35,7 @@ const Navber = () => {
                         </ul>
                     </div>
                     <Link to='/' className='flex gap-2 justify-center items-center'>
-                        <FcCollaboration className=" text-2xl md:text-3xl " />
+                        <SiGamemaker className=" text-3xl md:text-4xl text-rose-700  " />
                         <span className='font-bold text-rose-500 md:text-xl'>E-Assignment Collaborative</span>
                     </Link>
 
@@ -62,7 +62,7 @@ const Navber = () => {
                                 <div>
                                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                         <div className="w-10 rounded-full">
-                                            <img alt="Tailwind CSS Navbar component" src={user?.photoURL}  />
+                                            <img alt="Tailwind CSS Navbar component" src={user?.photoURL} />
                                         </div>
                                     </div>
                                     <ul tabIndex={0} className="mt-3 z-[10] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">

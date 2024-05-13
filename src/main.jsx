@@ -16,6 +16,7 @@ import DitelsPage from './pages/ditels/DitelsPage';
 import SubmitAssignment from './pages/submitasssignment/SubmitAssignment';
 import UpdatePg from './pages/updatepg/UpdatePg';
 import PendingAssignment from './pages/pending/PendingAssignment';
+import MarkPage from './pages/markpg/MarkPage';
 
 
 const router = createBrowserRouter([
@@ -72,6 +73,12 @@ const router = createBrowserRouter([
         path: "/pendingas",
         element: <PendingAssignment></PendingAssignment>,
         loader: () => fetch('http://localhost:9000/assignsubmits')
+
+      },
+      {
+        path: "/markspg/:id",
+        element: <MarkPage></MarkPage>,
+        loader: ({params}) => fetch(`http://localhost:9000/assignsubmits/${params.id}`)
 
       },
 
