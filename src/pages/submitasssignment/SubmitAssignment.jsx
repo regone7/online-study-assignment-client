@@ -45,7 +45,7 @@ const SubmitAssignment = () => {
                                     <label className="label">
                                         <span className="label-text">PDF/doc link/google drive</span>
                                     </label>
-                                    <input type="link_submit" name="link_submit" placeholder="link_submit" className="input input-bordered" required />
+                                    <input type="text" name="link_submit" placeholder="link_submit" className="input input-bordered" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">

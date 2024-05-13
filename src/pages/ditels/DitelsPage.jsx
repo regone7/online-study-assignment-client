@@ -15,7 +15,7 @@ const DitelsPage = () => {
                         <p >Marks: {marks}</p>
                         <p >Category: {category}</p>
                         <p >Due Date: {date}</p>
-                        <Link to={`/submitassignment/${_id}`}><button className="btn btn-sm text-white bg-rose-400 hover:bg-rose-600 my-3">Take Assignment </button></Link>
+                        <Link to={`/submitassignment/${_id}`}><button className="btn btn-sm text-white bg-rose-400 hover:bg-rose-600 my-3">Take Assignment Attemp </button></Link>
                     </div>
                 </div>
             </div>
