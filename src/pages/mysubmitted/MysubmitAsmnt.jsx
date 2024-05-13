@@ -3,14 +3,15 @@ import { AuthContext } from "../../provider/AuthProvider";
 
 
 const MysubmitAsmnt = () => {
-    const { user } = useContext(AuthContext)
+    const { user,setLoading } = useContext(AuthContext)
     const [mysub, setMysub] = useState([])
     useEffect(() => {
         fetch(`http://localhost:9000/assignsubmitseml/${user?.email}`)
             .then((res) => res.json())
             .then((data) => {
-                // console.log(data)
+                console.log(data)
                 setMysub(data);
+                setLoading(false)
             })
     }, [])
     console.log(mysub)
@@ -33,7 +34,7 @@ const MysubmitAsmnt = () => {
                         <tbody>
                             {
                                 mysub.map(mysubs => (
-                                    <tr>
+                                    <tr key={mysubs._id}>
                                         <th></th>
                                         <td>{mysubs.atitle}</td>
                                         <td className={`px-3 py-1 ${mysubs.status === 'completed' && 'text-blue-700 font-semibold'} ${mysubs.status === 'pending' && 'text-pink-700 font-semibold'}`} >{mysubs.status}</td>

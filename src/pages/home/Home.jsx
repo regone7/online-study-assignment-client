@@ -1,4 +1,5 @@
 import Banner from "../../components/Banner";
+import Faq from "../../components/Faq";
 import Features from "../../components/Features";
 
 
@@ -10,6 +11,9 @@ const Home = () => {
             </div>
             <div>
                 <Features></Features>
+            </div>
+            <div>
+                <Faq></Faq>
             </div>
         </div>
     );

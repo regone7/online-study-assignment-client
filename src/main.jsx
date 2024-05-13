@@ -18,13 +18,14 @@ import UpdatePg from './pages/updatepg/UpdatePg';
 import PendingAssignment from './pages/pending/PendingAssignment';
 import MarkPage from './pages/markpg/MarkPage';
 import MysubmitAsmnt from './pages/mysubmitted/MysubmitAsmnt';
+import Errorpage from './components/Errorpage';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-
+    errorElement: <Errorpage></Errorpage>,
     children: [
       {
         path: "/",

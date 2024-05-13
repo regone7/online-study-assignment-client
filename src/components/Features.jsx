@@ -3,6 +3,7 @@ import { GrLinkNext } from "react-icons/gr";
 import { MdCreateNewFolder } from "react-icons/md";
 import { MdOutlinePendingActions } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { SlUser } from "react-icons/sl";
 
 const Features = () => {
     return (
@@ -48,13 +49,28 @@ const Features = () => {
                         </div>
                         <div className="p-8 space-y-3 border-2 border-rose-400 dark:border-blue-300 rounded-xl">
                             <span className="inline-block text-blue-500 dark:text-blue-400 text-5xl">
+                            <SlUser />
+                            </span>
+
+                            <h1 className="text-xl font-semibold text-gray-700 capitalize dark:text-white">My Attempted Assignment</h1>
+
+                            <p className="text-gray-500 dark:text-gray-300">
+                                Only login user himself saw his Attempted Assignment.
+                            </p>
+
+                            <Link to='/mysubmittedas' > <span className="inline-flex p-2 text-blue-500 capitalize transition-colors duration-300 transform bg-blue-100 rounded-full rtl:-scale-x-100 dark:bg-blue-500 dark:text-white hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                                <GrLinkNext />
+                            </span></Link>
+                        </div>
+                        <div className="p-8 space-y-3 border-2 border-rose-400 dark:border-blue-300 rounded-xl">
+                            <span className="inline-block text-blue-500 dark:text-blue-400 text-5xl">
                                 <MdOutlinePendingActions />
                             </span>
 
                             <h1 className="text-xl font-semibold text-gray-700 capitalize dark:text-white">Pending Assignments</h1>
 
                             <p className="text-gray-500 dark:text-gray-300">
-                                Any Submitted  assignment there . Anyone login user marks and take a look of his answer.
+                                Anyone Submitted  assignment there . Any login users marke submitted assignment, excepts in this assignment create user.
                             </p>
                             <Link to='/pendingas' ><span className="inline-flex p-2 text-blue-500 capitalize transition-colors duration-300 transform bg-blue-100 rounded-full rtl:-scale-x-100 dark:bg-blue-500 dark:text-white hover:underline hover:text-blue-600 dark:hover:text-blue-500">
                                 <GrLinkNext />
