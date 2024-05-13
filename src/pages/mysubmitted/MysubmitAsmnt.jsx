@@ -11,9 +11,9 @@ const MysubmitAsmnt = () => {
             .then((data) => {
                 console.log(data)
                 setMysub(data);
-                setLoading(false)
+                // setLoading(false)
             })
-    }, [])
+    }, [user?.email])
     console.log(mysub)
     return (
         <div>
