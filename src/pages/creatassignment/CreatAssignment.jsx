@@ -32,6 +32,7 @@ const CreatAssignment = () => {
             toast.success('Assignment will be created Successfuly ')
           } catch (err) {
             console.log(err)
+            toast.error(' error')
           }
 
 

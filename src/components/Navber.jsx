@@ -1,19 +1,23 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { SiGamemaker } from "react-icons/si";
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
-
+import toast, { Toaster } from 'react-hot-toast';
 
 const Navber = () => {
     const { user, signOutUser } = useContext(AuthContext)
+    const navigate = useNavigate()
     const handelLogout = () => {
         signOutUser()
             .then(() => {
                 console.log("sign out")
+                toast.success(' Successfuly logout')
+                navigate(location?.state ? location.state : '/');
 
             })
             .catch(error => {
                 console.error(error);
+                toast.error(' error')
             })
     }
     return (
@@ -26,6 +30,9 @@ const Navber = () => {
                         </div>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[10] p-2 shadow bg-base-100 rounded-box w-52 space-y-2 ">
                             <NavLink to='/' className={({ isActive }) => isActive ? 'text-orange-500 font-bold   w-12 h-7 flex justify-center items-center text-sm' : ' w-12 h-7 flex justify-center items-center text-sm'}>Home</NavLink>
+                            <NavLink to='/allassignment' className={({ isActive }) => isActive ? 'text-orange-500 font-bold  h-7 flex justify-center items-center text-sm mx-2' : 'h-7 flex justify-center items-center text-sm mx-2'}>Assignments</NavLink>
+                            <NavLink to='/createassignment' className={({ isActive }) => isActive ? 'text-orange-500 font-bold  h-7 flex justify-center items-center text-sm' : 'h-7 flex justify-center items-center text-sm'}>Create Assignment</NavLink>
+                            <NavLink to='/pendingas' className={({ isActive }) => isActive ? 'text-orange-500 font-bold  h-7 flex justify-center items-center text-sm mx-2' : 'h-7 flex justify-center items-center text-sm mx-2'}>Pending Assignments</NavLink>
                             {
                                 !user && <>
                                     <NavLink to='/login' className={({ isActive }) => isActive ? 'text-orange-500 font-bold   w-12 h-7 flex justify-center items-center text-sm' : ' w-12 h-7 flex justify-center items-center text-sm'}>Login</NavLink>
@@ -46,7 +53,7 @@ const Navber = () => {
                         <NavLink to='/allassignment' className={({ isActive }) => isActive ? 'text-orange-500 font-bold  h-7 flex justify-center items-center text-sm mx-2' : 'h-7 flex justify-center items-center text-sm mx-2'}>Assignments</NavLink>
                         <NavLink to='/createassignment' className={({ isActive }) => isActive ? 'text-orange-500 font-bold  h-7 flex justify-center items-center text-sm' : 'h-7 flex justify-center items-center text-sm'}>Create Assignment</NavLink>
                         <NavLink to='/pendingas' className={({ isActive }) => isActive ? 'text-orange-500 font-bold  h-7 flex justify-center items-center text-sm mx-2' : 'h-7 flex justify-center items-center text-sm mx-2'}>Pending Assignments</NavLink>
-                        
+
                         {
                             !user && <>
                                 <NavLink to='/login' className={({ isActive }) => isActive ? 'text-orange-500 font-bold   w-12 h-7 flex justify-center items-center text-sm' : ' w-12 h-7 flex justify-center items-center text-sm'}>Login</NavLink>
@@ -62,7 +69,7 @@ const Navber = () => {
                                 <div >
                                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar ">
                                         <div className="w-10 rounded-full">
-                                            <img alt="Tailwind CSS Navbar component" src={user?.photoURL || 'https://i.ibb.co/vwWq42z/pexels-pixabay-162137.jpg' } />
+                                            <img alt="Tailwind CSS Navbar component" src={user?.photoURL || 'https://i.ibb.co/vwWq42z/pexels-pixabay-162137.jpg'} />
                                         </div>
                                     </div>
                                     <ul tabIndex={0} className="mt-3 z-[10] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
@@ -78,6 +85,7 @@ const Navber = () => {
                     </div>
                 </div>
             </div>
+            <Toaster position="top-center" />
         </div>
     );
 };

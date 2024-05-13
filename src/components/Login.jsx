@@ -1,15 +1,15 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaRegEyeSlash } from "react-icons/fa6";
 import { IoMdEye } from "react-icons/io";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../provider/AuthProvider";
-
+import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
     const [showPasswords, setShowPasswords] = useState(false)
     const {signInUsers,googleLogin,setLoading}= useContext(AuthContext)
-   
+    const navigate = useNavigate()
 
     const handelLoginPg=(e)=>{
         e.preventDefault();
@@ -21,12 +21,14 @@ const Login = () => {
             .then(result => {
                 console.log(result.user)
                 console.log('success')
-               
+                toast.success(' Successfuly login')
+                navigate(location?.state ? location.state : '/');
                 setLoading(false)
                
             })
             .catch(error => {
                 console.error(error)
+                toast.error(' error')
                
                 
             })
@@ -36,12 +38,12 @@ const Login = () => {
             .then((result) => {
                 console.log(result.user)
                 console.log("google success")
-                
-                
+                toast.success(' Successfuly login')
+                navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
                 console.error(error)
-
+                toast.error(' error')
             })
     }
     
@@ -95,7 +97,7 @@ const Login = () => {
 
                     </div>
                 </div>
-
+                <Toaster position="top-center" />
             </div>
         </div>
     );

@@ -19,6 +19,7 @@ import PendingAssignment from './pages/pending/PendingAssignment';
 import MarkPage from './pages/markpg/MarkPage';
 import MysubmitAsmnt from './pages/mysubmitted/MysubmitAsmnt';
 import Errorpage from './components/Errorpage';
+import PrivateRoutes from './privateroute/PrivateRoutes';
 
 
 const router = createBrowserRouter([
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/createassignment",
-        element: <CreatAssignment></CreatAssignment>,
+        element: <PrivateRoutes><CreatAssignment></CreatAssignment></PrivateRoutes>,
 
       },
       {
@@ -55,7 +56,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/ditelspg/:id",
-        element: <DitelsPage></DitelsPage>,
+        element: <PrivateRoutes><DitelsPage></DitelsPage></PrivateRoutes>,
         loader: ({params}) => fetch(`http://localhost:9000/assignment/${params.id}`)
 
       },
@@ -73,19 +74,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/pendingas",
-        element: <PendingAssignment></PendingAssignment>,
+        element: <PrivateRoutes><PendingAssignment></PendingAssignment></PrivateRoutes>,
         loader: () => fetch('http://localhost:9000/assignsubmits')
 
       },
       {
         path: "/markspg/:id",
-        element: <MarkPage></MarkPage>,
+        element: <PrivateRoutes><MarkPage></MarkPage></PrivateRoutes>,
         loader: ({params}) => fetch(`http://localhost:9000/assignsubmits/${params.id}`)
 
       },
       {
         path: "/mysubmittedas",
-        element: <MysubmitAsmnt></MysubmitAsmnt>,
+        element: <PrivateRoutes><MysubmitAsmnt></MysubmitAsmnt></PrivateRoutes>,
 
       },
 

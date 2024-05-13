@@ -1,15 +1,16 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaRegEyeSlash } from "react-icons/fa6";
 import { IoMdEye } from "react-icons/io";
 import { AuthContext } from "../provider/AuthProvider";
-
+import toast, { Toaster } from 'react-hot-toast';
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false)
     const [error, setError] = useState("");
-    const { creatUser,updateUserProfile,setLoading } = useContext(AuthContext)
-    const handelRegisterPg=(e)=>{
+    const { creatUser, updateUserProfile, setLoading } = useContext(AuthContext)
+    const navigate = useNavigate()
+    const handelRegisterPg = (e) => {
         e.preventDefault();
         const name = e.target.name.value;
         const email = e.target.email.value;
@@ -35,16 +36,18 @@ const Register = () => {
             .then(() => {
                 updateUserProfile(name, photoURL)
                     .then(() => {
-                     console.log("success update") 
-                     
-                        setLoading(false)  
-                        
+                        console.log("success update")
+                        toast.success(' Successfuly Register')
+                        navigate(location?.state ? location.state : '/');
+                        setLoading(false)
+
                     })
 
             })
             .catch((error) => {
                 console.error(error)
-               
+                toast.error(' error')
+
             })
 
     }
@@ -114,6 +117,7 @@ const Register = () => {
                 </div>
 
             </div>
+            <Toaster position="top-center" />
         </div>
     );
 };

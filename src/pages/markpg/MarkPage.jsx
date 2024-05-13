@@ -27,9 +27,11 @@ const MarkPage = () => {
         )
         console.log(data)
         console.log('success')
+        toast.success(' Success')
         
     } catch (err) {
         console.log(err)
+        toast.error(' error')
     }
     }
     return (

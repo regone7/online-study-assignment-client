@@ -37,6 +37,7 @@ const UpdatePg = () => {
             toast.success('Assignment will be created Successfuly ')
         } catch (err) {
             console.log(err)
+            toast.error(' error')
         }
 
 
@@ -47,7 +48,7 @@ const UpdatePg = () => {
                 <div className="hero-content  ">
 
                     <div className="card shrink-0 lg:w-[450px]  md:w-[350px] shadow-2xl rounded-none bg-green-50">
-                        <h1 className="text-2xl text-center pt-5  font-bold md:text-3xl ">Create Assignment</h1>
+                        <h1 className="text-2xl text-center pt-5  font-bold md:text-3xl ">Update Assignment</h1>
                         <div className="card-body -mt-5">
                             <form onSubmit={handelUpdateAssignment}>
                                 <div className="form-control">
