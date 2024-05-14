@@ -5,6 +5,7 @@ import { MdOutlinePendingActions } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { SlUser } from "react-icons/sl";
 
+
 const Features = () => {
     return (
         <div>
@@ -27,7 +28,7 @@ const Features = () => {
                             <p className="text-gray-500 dark:text-gray-300">
                                 Anyone can see any type of assignment that available in this website. Login user can attempted assignment submission.
                             </p>
-                            <Link to='/allassignment' > <span className="inline-flex p-2 text-blue-500 capitalize transition-colors duration-300 transform bg-blue-100 rounded-full rtl:-scale-x-100 dark:bg-blue-500 dark:text-white hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                            <Link to='/allassignment' > <span  className="inline-flex p-2 text-blue-500 capitalize transition-colors duration-300 transform bg-blue-100 rounded-full rtl:-scale-x-100 dark:bg-blue-500 dark:text-white hover:underline hover:text-blue-600 dark:hover:text-blue-500">
                                 <GrLinkNext />
                             </span></Link>
 
@@ -58,7 +59,7 @@ const Features = () => {
                                 Only login user himself saw his Attempted Assignment.
                             </p>
 
-                            <Link to='/mysubmittedas' > <span className="inline-flex p-2 text-blue-500 capitalize transition-colors duration-300 transform bg-blue-100 rounded-full rtl:-scale-x-100 dark:bg-blue-500 dark:text-white hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                            <Link to='/mysubmittedas' > <span  className="inline-flex p-2 text-blue-500 capitalize transition-colors duration-300 transform bg-blue-100 rounded-full rtl:-scale-x-100 dark:bg-blue-500 dark:text-white hover:underline hover:text-blue-600 dark:hover:text-blue-500">
                                 <GrLinkNext />
                             </span></Link>
                         </div>
@@ -72,7 +73,7 @@ const Features = () => {
                             <p className="text-gray-500 dark:text-gray-300">
                                 Anyone Submitted  assignment there . Any login users marke submitted assignment, excepts in this assignment create user.
                             </p>
-                            <Link to='/pendingas' ><span className="inline-flex p-2 text-blue-500 capitalize transition-colors duration-300 transform bg-blue-100 rounded-full rtl:-scale-x-100 dark:bg-blue-500 dark:text-white hover:underline hover:text-blue-600 dark:hover:text-blue-500">
+                            <Link to='/pendingas' ><span  className="inline-flex p-2 text-blue-500 capitalize transition-colors duration-300 transform bg-blue-100 rounded-full rtl:-scale-x-100 dark:bg-blue-500 dark:text-white hover:underline hover:text-blue-600 dark:hover:text-blue-500">
                                 <GrLinkNext />
                             </span></Link>
 

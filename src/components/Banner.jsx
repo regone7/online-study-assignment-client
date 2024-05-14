@@ -1,5 +1,7 @@
 
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
 const Banner = () => {
     return (
         <div className="container mx-auto my-5">
@@ -18,8 +20,11 @@ const Banner = () => {
                 <div className="hero-content flex-col md:flex-row ">
                     <img src="https://i.ibb.co/qBhL2hs/7409791-3653025.jpg" className="md:max-w-sm rounded-lg " />
                     <div>
-                        <h1 className="text-xl font-bold text-white"> Welcome to <span className="text-2xl text-gray-500">Online Study Assignment</span> </h1>
-                        
+                        <h1 data-aos="fade-left"
+                            data-aos-easing="linear"
+                            data-aos-duration="1500"
+                             className="text-xl font-bold text-white"> Welcome to <span className="text-2xl text-gray-500">Online Study Assignment</span> </h1>
+
                     </div>
                 </div>
             </div>
@@ -28,7 +33,7 @@ const Banner = () => {
                 <div className="hero-content flex-col md:flex-row-reverse ">
                     <img src="https://i.ibb.co/hmf9CCG/6622352-3375854.jpg" className="md:max-w-sm rounded-lg shadow-2xl" />
                     <div className="text-black">
-                        <h1 className="text-2xl font-bold"> Online Study Assignment</h1>
+                        <h1  className="text-2xl font-bold"> Online Study Assignment</h1>
                         <p className="my-3" >Through interactive discussions, shared resources, and virtual study groups, exchange ideas, and support one another's education knowladge. </p>
 
                     </div>
