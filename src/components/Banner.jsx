@@ -20,7 +20,7 @@ const Banner = () => {
                 <div className="hero-content flex-col md:flex-row ">
                     <img src="https://i.ibb.co/qBhL2hs/7409791-3653025.jpg" className="md:max-w-sm rounded-lg " />
                     <div>
-                        <h1 data-aos="fade-left"
+                        <h1 data-aos="fade-down"
                             data-aos-easing="linear"
                             data-aos-duration="1500"
                              className="text-xl font-bold text-white"> Welcome to <span className="text-2xl text-gray-500">Online Study Assignment</span> </h1>
