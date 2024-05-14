@@ -1,8 +1,15 @@
-# React + Vite
+The name of your website is E-Assignment Collaborative.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+live site url : https://online-study-assignment.web.app
 
-Currently, two official plugins are available:
+Five bullet points to feature:
+1.Anyone can see any type of create assignment that available in this website. 
+2.Login user can attempted assignment submission.
+3.Login user can create assignment.
+4.In My Submitted/attempted assignment page will have all assignments which are submitted by the specific user.
+5.The pending assignments page will contain all the pending assignments(which assignments are not marked yet)submitted by the users.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Selected category's name:
+-Easy
+-Medium
+-Hard
