@@ -11,7 +11,7 @@ const MarkPage = () => {
     const { link_submit, note_text, status, email, examinee_name,atitle,amarks,_id,inspection_marks,feedback } =markes;
     const handelMarkgive = async(e)=>{
         e.preventDefault();
-        if(user?.email === email) return toast.error(' You are create this assignment so you can not submit.  ')
+        if(user?.email === email) return toast.error(' You are create this assignment so you can not submit marks.  ')
         const link_submit = e.target.link_submit.value;
         const note_text = e.target.note_text.value;
         const amarks = e.target.amarks.value;

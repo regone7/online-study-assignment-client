@@ -4,10 +4,12 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import toast, { Toaster } from 'react-hot-toast';
 import { AuthContext } from "../../provider/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 const CreatAssignment = () => {
     const { user } = useContext(AuthContext)
     const [startDate, setStartDate] = useState(new Date());
+    const navigate = useNavigate()
     const handelCreateAssignment = async(e)=>{
         e.preventDefault();
 
@@ -30,6 +32,7 @@ const CreatAssignment = () => {
             console.log(data)
             console.log('success')
             toast.success('Assignment will be created Successfuly ')
+            navigate('/allassignment')
           } catch (err) {
             console.log(err)
             toast.error(' error')

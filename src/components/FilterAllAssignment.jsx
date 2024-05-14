@@ -19,8 +19,8 @@ const FilterAllAssignment = ({ fil }) => {
 
 
     const handleDelete = async id => {
-        if (user?.email !== card?.email) return toast.error('Error')
-        if (!user) return toast.error('Error')
+        if (user?.email !== card?.email) return toast.error('Error You are not create this assignment')
+        if (!user) return toast.error('Error You are not create this assignment')
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",

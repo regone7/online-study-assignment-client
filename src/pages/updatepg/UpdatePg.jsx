@@ -4,12 +4,13 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import toast, { Toaster } from 'react-hot-toast';
 import { AuthContext } from "../../provider/AuthProvider";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 const UpdatePg = () => {
     const { user } = useContext(AuthContext)
     const [startDate, setStartDate] = useState(new Date());
     const updates = useLoaderData()
+    const navigate = useNavigate()
     console.log(updates)
     const { title, description, marks, photoURL, category, date, email, _id } = updates
 
@@ -35,6 +36,7 @@ const UpdatePg = () => {
             console.log(data)
             console.log('success')
             toast.success('Assignment will be created Successfuly ')
+            navigate('/allassignment')
         } catch (err) {
             console.log(err)
             toast.error(' error')
