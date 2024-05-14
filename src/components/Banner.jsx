@@ -27,7 +27,7 @@ const Banner = () => {
             <div className="hero  bg-yellow-100 rounded-sm md:h-[400px] ">
                 <div className="hero-content flex-col md:flex-row-reverse ">
                     <img src="https://i.ibb.co/hmf9CCG/6622352-3375854.jpg" className="md:max-w-sm rounded-lg shadow-2xl" />
-                    <div>
+                    <div className="text-black">
                         <h1 className="text-2xl font-bold"> Online Study Assignment</h1>
                         <p className="my-3" >Through interactive discussions, shared resources, and virtual study groups, exchange ideas, and support one another's education knowladge. </p>
 
