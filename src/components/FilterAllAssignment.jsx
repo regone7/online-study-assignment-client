@@ -32,7 +32,7 @@ const FilterAllAssignment = ({ fil }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:9000/delete/${id}`, {
+                fetch(`https://online-study-assignment-server.vercel.app/delete/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -64,7 +64,7 @@ const FilterAllAssignment = ({ fil }) => {
 
         // try {
         //     const { data } = await axios.delete(
-        //         `http://localhost:9000/delete/${id}`
+        //         `https://online-study-assignment-server.vercel.app/delete/${id}`
         //     )
 
         //     console.log(data)

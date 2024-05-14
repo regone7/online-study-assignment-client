@@ -51,37 +51,37 @@ const router = createBrowserRouter([
       {
         path: "/allassignment",
         element: <AllAssignments></AllAssignments>,
-        loader: () => fetch('http://localhost:9000/assignment')
+        loader: () => fetch('https://online-study-assignment-server.vercel.app/assignment')
 
       },
       {
         path: "/ditelspg/:id",
         element: <PrivateRoutes><DitelsPage></DitelsPage></PrivateRoutes>,
-        loader: ({params}) => fetch(`http://localhost:9000/assignment/${params.id}`)
+        loader: ({params}) => fetch(`https://online-study-assignment-server.vercel.app/assignment/${params.id}`)
 
       },
       {
         path: "/submitassignment/:id",
         element: <SubmitAssignment></SubmitAssignment>,
-        loader: ({params}) => fetch(`http://localhost:9000/assignment/${params.id}`)
+        loader: ({params}) => fetch(`https://online-study-assignment-server.vercel.app/assignment/${params.id}`)
 
       },
       {
         path: "/updatepg/:id",
         element: <UpdatePg></UpdatePg>,
-        loader: ({params}) => fetch(`http://localhost:9000/assignment/${params.id}`)
+        loader: ({params}) => fetch(`https://online-study-assignment-server.vercel.app/assignment/${params.id}`)
 
       },
       {
         path: "/pendingas",
         element: <PrivateRoutes><PendingAssignment></PendingAssignment></PrivateRoutes>,
-        loader: () => fetch('http://localhost:9000/assignsubmits')
+        loader: () => fetch('https://online-study-assignment-server.vercel.app/assignsubmits')
 
       },
       {
         path: "/markspg/:id",
         element: <PrivateRoutes><MarkPage></MarkPage></PrivateRoutes>,
-        loader: ({params}) => fetch(`http://localhost:9000/assignsubmits/${params.id}`)
+        loader: ({params}) => fetch(`https://online-study-assignment-server.vercel.app/assignsubmits/${params.id}`)
 
       },
       {

@@ -6,7 +6,7 @@ const MysubmitAsmnt = () => {
     const { user,setLoading } = useContext(AuthContext)
     const [mysub, setMysub] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:9000/assignsubmitseml/${user?.email}`)
+        fetch(`https://online-study-assignment-server.vercel.app/assignsubmitseml/${user?.email}`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data)

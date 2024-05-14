@@ -26,7 +26,7 @@ const CreatAssignment = () => {
 
         try {
             const { data } = await axios.post(
-              'http://localhost:9000/assignment',
+              'https://online-study-assignment-server.vercel.app/assignment',
               createassignments
             )
             console.log(data)

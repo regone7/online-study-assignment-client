@@ -30,7 +30,7 @@ const UpdatePg = () => {
 
         try {
             const { data } = await axios.put(
-                `http://localhost:9000/update/${_id}`,
+                `https://online-study-assignment-server.vercel.app/update/${_id}`,
                 updateAssg
             )
             console.log(data)

@@ -22,7 +22,7 @@ const MarkPage = () => {
        console.log(updateMarks)
        try {
         const { data } = await axios.put(
-            `http://localhost:9000/updates/${_id}`,
+            `https://online-study-assignment-server.vercel.app/updates/${_id}`,
             updateMarks
         )
         console.log(data)

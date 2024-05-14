@@ -24,7 +24,7 @@ const SubmitAssignment = () => {
         console.log(submitData)
         try {
             const { data } = await axios.post(
-                'http://localhost:9000/assignsubmit',
+                'https://online-study-assignment-server.vercel.app/assignsubmit',
                 submitData
             )
             console.log(data)
