@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import axios from "axios";
 import { useLoaderData } from "react-router-dom";
-
+import toast, { Toaster } from 'react-hot-toast';
 
 const SubmitAssignment = () => {
     const { user } = useContext(AuthContext)
@@ -29,9 +29,11 @@ const SubmitAssignment = () => {
             )
             console.log(data)
             console.log('success')
+            toast.success(' Success')
 
         } catch (err) {
             console.log(err)
+            toast.error(' error')
         }
     }
     return (
@@ -68,6 +70,7 @@ const SubmitAssignment = () => {
 
 
             </div>
+            <Toaster position="top-center" />
         </div>
     );
 };
