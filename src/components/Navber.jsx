@@ -63,7 +63,7 @@ const Navber = () => {
                     </Link>
 
                 </div>
-                <div className="navbar-end  hidden lg:flex w-[1150px]">
+                <div className="navbar-end  hidden lg:flex w-[1250px]">
                     <ul className="menu menu-horizontal ">
                         <NavLink to='/' className={({ isActive }) => isActive ? 'text-orange-500 font-bold   w-12 h-7 flex justify-center items-center text-sm' : ' w-12 h-7 flex justify-center items-center text-sm '}>Home</NavLink>
                         <NavLink to='/allassignment' className={({ isActive }) => isActive ? 'text-orange-500 font-bold  h-7 flex justify-center items-center text-sm mx-2' : 'h-7 flex justify-center items-center text-sm mx-2'}>Assignments</NavLink>
