@@ -9,15 +9,15 @@ import { SlUser } from "react-icons/sl";
 const Features = () => {
     return (
         <div>
-            <section className= " dark:bg-gray-900 ">
-                <div className="container px-6 py-10 mx-auto">
-                    <h1 className="text-2xl font-semibold  capitalize lg:text-3xl  dark:text-white text-center">Feature</h1>
+            <section >
+                <div className="container mx-auto p-3 mb-7 ">
+                    <h1 className="text-center text-3xl font-semibold ">Feature</h1>
 
-                    <p className="mt-4 text-gray-500 xl:mt-6 dark:text-gray-300 text-center">
+                    <p className="text-center mb-5  ">
                         Feature of this webside
                     </p>
 
-                    <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
+                    <div className="grid grid-cols-1 gap-8  xl:gap-12 md:grid-cols-2 xl:grid-cols-3 p-3">
                         <div className="p-8 space-y-3 border-2 border-rose-400 dark:border-blue-300 rounded-xl">
                             <span className="inline-block text-blue-500 dark:text-blue-400 text-5xl">
                                 <MdOutlineAssignment />

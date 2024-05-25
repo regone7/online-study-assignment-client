@@ -3,10 +3,10 @@
 const Faq = () => {
     return (
         <div>
-            <div className="p-3 mb-3">
+            <div className="p-3 mb-7">
                 <h1 className="text-center text-3xl font-semibold ">Faq</h1>
-                <p className="text-center mb-3">Will have some frequently asked questions</p>
-                <div className="grid w-full">
+                <p className="text-center mb-5">Will have some frequently asked questions</p>
+                <div className="grid w-full mb-12">
                     <div className="join join-vertical w-full">
                         <div className="collapse collapse-arrow join-item border border-base-300">
                             <input type="radio" name="my-accordion-4" defaultChecked />
