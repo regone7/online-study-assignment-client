@@ -20,6 +20,10 @@ import MarkPage from './pages/markpg/MarkPage';
 import MysubmitAsmnt from './pages/mysubmitted/MysubmitAsmnt';
 import Errorpage from './components/Errorpage';
 import PrivateRoutes from './privateroute/PrivateRoutes';
+import Quiz from './pages/quiz/Quiz'
+import Quizattempt from './pages/quiz/Quizattempt';
+import QuizattempDM from './pages/quiz/QuizattempDM';
+import QuixattemptAlgorithom from './pages/quiz/QuixattemptAlgorithom';
 
 
 const router = createBrowserRouter([
@@ -87,6 +91,26 @@ const router = createBrowserRouter([
       {
         path: "/mysubmittedas",
         element: <PrivateRoutes><MysubmitAsmnt></MysubmitAsmnt></PrivateRoutes>,
+
+      },
+      {
+        path: "/quiz",
+        element: <Quiz></Quiz>,
+
+      },
+      {
+        path: "/quizjs",
+        element: <PrivateRoutes><Quizattempt></Quizattempt></PrivateRoutes>,
+
+      },
+      {
+        path: "/quizdm",
+        element: <PrivateRoutes><QuizattempDM></QuizattempDM></PrivateRoutes>,
+
+      },
+      {
+        path: "/quizalgrtm",
+        element: <PrivateRoutes><QuixattemptAlgorithom></QuixattemptAlgorithom></PrivateRoutes>,
 
       },
 

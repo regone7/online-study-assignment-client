@@ -48,7 +48,12 @@ const Navber = () => {
                             <NavLink to='/' className={({ isActive }) => isActive ? 'text-orange-500 font-bold   w-12 h-7 flex justify-start items-center text-sm mx-2' : ' w-12 h-7 flex justify-start items-center text-sm mx-2'}>Home</NavLink>
                             <NavLink to='/allassignment' className={({ isActive }) => isActive ? 'text-orange-500 font-bold  h-7 flex justify-start items-center text-sm mx-2' : 'h-7 flex justify-start items-center text-sm mx-2'}>Assignments</NavLink>
                             <NavLink to='/createassignment' className={({ isActive }) => isActive ? 'text-orange-500 font-bold  h-7 flex justify-start items-center text-sm mx-2' : 'h-7 flex justify-start items-center text-sm mx-2'}>Create Assignment</NavLink>
-                            <NavLink to='/pendingas' className={({ isActive }) => isActive ? 'text-orange-500 font-bold  h-7 flex justify-center items-center text-sm mx-2' : 'h-7 flex justify-start items-center text-sm mx-2'}>Pending Assignments</NavLink>
+                            <NavLink to='/pendingas' className={({ isActive }) => isActive ? 'text-orange-500 font-bold  h-7 flex justify-start items-center text-sm mx-2' : 'h-7 flex justify-start items-center text-sm mx-2'}>Pending Assignments</NavLink>
+                            {
+                                user && <>
+                                    <NavLink to='/quiz' className={({ isActive }) => isActive ? 'text-orange-500 font-bold  h-7 flex justify-start items-center text-sm mx-2' : 'h-7 flex justify-start items-center text-sm mx-2'}>Quiz</NavLink>
+                                </>
+                            }
                             {
                                 !user && <>
                                     <NavLink to='/login' className={({ isActive }) => isActive ? 'text-orange-500 font-bold   w-12 h-7 flex justify-start items-center text-sm mx-2' : ' w-12 h-7 flex justify-center items-center text-sm mx-2'}>Login</NavLink>
@@ -64,11 +69,16 @@ const Navber = () => {
 
                 </div>
                 <div className="navbar-end  hidden lg:flex w-[1250px]">
-                    <ul className="menu menu-horizontal ">
+                    <ul className="menu menu-horizontal  ">
                         <NavLink to='/' className={({ isActive }) => isActive ? 'text-orange-500 font-bold   w-12 h-7 flex justify-center items-center text-sm' : ' w-12 h-7 flex justify-center items-center text-sm '}>Home</NavLink>
                         <NavLink to='/allassignment' className={({ isActive }) => isActive ? 'text-orange-500 font-bold  h-7 flex justify-center items-center text-sm mx-2' : 'h-7 flex justify-center items-center text-sm mx-2'}>Assignments</NavLink>
                         <NavLink to='/createassignment' className={({ isActive }) => isActive ? 'text-orange-500 font-bold  h-7 flex justify-center items-center text-sm' : 'h-7 flex justify-center items-center text-sm'}>Create Assignment</NavLink>
                         <NavLink to='/pendingas' className={({ isActive }) => isActive ? 'text-orange-500 font-bold  h-7 flex justify-center items-center text-sm mx-2' : 'h-7 flex justify-center items-center text-sm mx-2'}>Pending Assignments</NavLink>
+                        {
+                            user && <>
+                                <NavLink to='/quiz' className={({ isActive }) => isActive ? 'text-orange-500 font-bold  h-7 flex justify-center items-center text-sm ' : 'h-7 flex justify-center items-center text-sm'}>Quiz</NavLink>
+                            </>
+                        }
 
                         {
                             !user && <>
