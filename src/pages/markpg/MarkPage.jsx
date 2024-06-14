@@ -8,35 +8,35 @@ const MarkPage = () => {
     const { user } = useContext(AuthContext)
     const markes = useLoaderData()
     // console.log(markes)
-    const { link_submit, note_text, status, email, examinee_name,atitle,amarks,_id,inspection_marks,feedback } =markes;
-    const handelMarkgive = async(e)=>{
+    const { link_submit, note_text, status, email, examinee_name, atitle, amarks, _id, inspection_marks, feedback } = markes;
+    const handelMarkgive = async (e) => {
         e.preventDefault();
-        if(user?.email === email) return toast.error(' You are create this assignment so you can not submit marks.  ')
+        if (user?.email === email) return toast.error(' You are create this assignment so you can not submit marks.  ')
         const link_submit = e.target.link_submit.value;
         const note_text = e.target.note_text.value;
         const amarks = e.target.amarks.value;
         const inspection_marks = e.target.inspection_marks.value;
         const feedback = e.target.feedback.value;
         const status = e.target.status.value;
-       const updateMarks={link_submit, note_text, status, email, examinee_name,atitle,amarks,inspection_marks,feedback}
-       console.log(updateMarks)
-       try {
-        const { data } = await axios.put(
-            `https://online-study-assignment-server.vercel.app/updates/${_id}`,
-            updateMarks
-        )
-        console.log(data)
-        console.log('success')
-        toast.success(' Success')
-        
-    } catch (err) {
-        console.log(err)
-        toast.error(' error')
-    }
+        const updateMarks = { link_submit, note_text, status, email, examinee_name, atitle, amarks, inspection_marks, feedback }
+        console.log(updateMarks)
+        try {
+            const { data } = await axios.put(
+                `https://online-study-assignment-server.vercel.app/updates/${_id}`,
+                updateMarks
+            )
+            console.log(data)
+            console.log('success')
+            toast.success(' Success')
+
+        } catch (err) {
+            console.log(err)
+            toast.error(' error')
+        }
     }
     return (
         <div>
-             <div className="hero min-h-screen  text-gray-700">
+            <div className="hero min-h-screen  text-gray-700">
                 <div className="hero-content  ">
 
                     <div className="card shrink-0 lg:w-[650px]  md:w-[500px] w-full shadow-2xl rounded-none bg-pink-50">
@@ -48,7 +48,7 @@ const MarkPage = () => {
                                         <span className="label-text">PDF/doc link/google drive ...Copy this Link and paste in browser </span>
                                     </label>
                                     <textarea name="link_submit" placeholder="link_submit" defaultValue={link_submit} className=" h-28 p-3 input input-bordered" disabled ></textarea>
-                                    
+
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
@@ -66,7 +66,7 @@ const MarkPage = () => {
                                     <label className="label">
                                         <span className="label-text">Inspection Marks</span>
                                     </label>
-                                    <input type="text"  name="inspection_marks" placeholder="inspection_marks" className="input input-bordered" required />
+                                    <input type="text" name="inspection_marks" placeholder="inspection_marks" className="input input-bordered" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
@@ -78,11 +78,11 @@ const MarkPage = () => {
                                     <label className="label">
                                         <span className="label-text">Is marks and feedback input?</span>
                                     </label>
-                                    <select defaultValue={status} name="status"  className="h-12 p-3 input-bordered " required >
+                                    <select defaultValue={status} name="status" className="h-12 p-3 input-bordered " required >
                                         <option value="completed">completed</option>
                                         <option value="pending">pending</option>
-                                        
-                                        
+
+
                                     </select>
                                 </div>
 
