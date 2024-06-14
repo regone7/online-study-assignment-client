@@ -16,6 +16,7 @@ Five bullet points to feature:
 
 
 Selected category's name:
+
 -Easy
 
 -Medium
