@@ -2,6 +2,8 @@ The name of your website is E-Assignment Collaborative.
 
 live site url : https://online-study-assignment.web.app
 
+Technology - React, React Router, Tailwind CSS, daisyUI, JWT, Firebase, Express.js, MongoDB
+
 Five bullet points to feature:
 
 1.Anyone can see any type of create assignment that available in this website. 
